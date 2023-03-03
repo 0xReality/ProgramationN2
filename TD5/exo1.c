@@ -24,7 +24,7 @@ int random(int min, int max)
 
 void initialiser_tab_releves(lien * t, int taille) {
     int i;
-    srand(time(NULL)); // srand should be called only once
+    srand(time(NULL));
     for (i = 0; i <= taille; ++i) {
         /* réservation d'espace mémoire pour les relevés référencés dans le tableau */
         t[i] = malloc(sizeof(struct releve_BF_N2_info));
@@ -54,7 +54,7 @@ int main() {
 
     /* allocation de mémoire pour le tableau de relevés */
     releve = malloc(taille * sizeof(struct releve_BF_N2_info));
-    initialiser_tab_releves(&releve, taille); // don't use & before releve
+    initialiser_tab_releves(&releve, taille); 
     affiche_releve(&releve, taille);
     return 0;
 }
